@@ -1,0 +1,3127 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Tranzpay testing API",
+        "description": "\r\n *      This document provides technical specifications for processing financial transactions through the Tranzpay gateway by interfacing with the Gateway API. \r\n *      We have written this specifically for web designers and professionals who design, implement and support the intended systems. We use HTTPS POST to transmit and receive data. \r\n *      Please explore our payment gateway through our demonstration account with given test credentials.\r\n *      For questions or integration support, use the link below to submit a ticket to our Partner Integration Support Team Specialists. Partner Support",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/transaction.php?transactionType=ACHCharge": {
+            "post": {
+                "tags": [
+                    "ACH Method"
+                ],
+                "summary": "",
+                "description": "ACHCharge",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ACHChargeRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ACHChargeResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=ACHVOID": {
+            "post": {
+                "tags": [
+                    "ACH Method"
+                ],
+                "summary": "",
+                "description": "ACHVOID",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ACHVOIDRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ACHVOIDResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=ACHRefund": {
+            "post": {
+                "tags": [
+                    "ACH Method"
+                ],
+                "summary": "",
+                "description": "ACHRefund",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ACHRefundRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ACHRefundResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=ACHCredit": {
+            "post": {
+                "tags": [
+                    "ACH Method"
+                ],
+                "summary": "",
+                "description": "ACHCredit",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ACHCreditRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ACHCreditResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=GetTransactionACH": {
+            "post": {
+                "tags": [
+                    "ACH Method"
+                ],
+                "summary": "",
+                "description": "GetTransactionACH",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetTransactionACHRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetTransactionACHResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=GetNOCList": {
+            "post": {
+                "tags": [
+                    "ACH Method"
+                ],
+                "summary": "",
+                "description": "GetNOCList",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetNOCListRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetNOCListResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=GetACHReturnList": {
+            "post": {
+                "tags": [
+                    "ACH Method"
+                ],
+                "summary": "",
+                "description": "GetACHReturnList",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetACHReturnListRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetACHReturnListResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=CreditCardAuthorization": {
+            "post": {
+                "tags": [
+                    "Credit Card Method"
+                ],
+                "summary": "",
+                "description": "CreditCardAuthorization",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreditCardAuthorizationRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreditCardAuthorizationResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=CreditCardRefund": {
+            "post": {
+                "tags": [
+                    "Credit Card Method"
+                ],
+                "summary": "",
+                "description": "CreditCardRefund",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreditCardRefundRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreditCardRefundResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=CreditCardSale": {
+            "post": {
+                "tags": [
+                    "Credit Card Method"
+                ],
+                "summary": "",
+                "description": "CreditCardSale",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreditCardSaleRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreditCardSaleResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=CreditCardSettle": {
+            "post": {
+                "tags": [
+                    "Credit Card Method"
+                ],
+                "summary": "",
+                "description": "CreditCardSettle",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreditCardSettleRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreditCardSettleResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=CreditCardVoid": {
+            "post": {
+                "tags": [
+                    "Credit Card Method"
+                ],
+                "summary": "",
+                "description": "CreditCardVoid",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreditCardVoidRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreditCardVoidResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=GetTransaction": {
+            "post": {
+                "tags": [
+                    "Credit Card Method"
+                ],
+                "summary": "",
+                "description": "GetTransaction",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetTransactionRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetTransactionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=AddCustomer": {
+            "post": {
+                "tags": [
+                    "Customer Vault"
+                ],
+                "summary": "",
+                "description": "AddCustomer",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddCustomerRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddCustomerResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=UpdateCustomer": {
+            "post": {
+                "tags": [
+                    "Customer Vault"
+                ],
+                "summary": "",
+                "description": "UpdateCustomer",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCustomerRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateCustomerResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=GetCustomer": {
+            "post": {
+                "tags": [
+                    "Customer Vault"
+                ],
+                "summary": "",
+                "description": "GetCustomer",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GetCustomerRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCustomerResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=AddCustomerCCCharge": {
+            "post": {
+                "tags": [
+                    "Customer Vault"
+                ],
+                "summary": "",
+                "description": "AddCustomerCCCharge",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddCustomerCCChargeRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddCustomerCCChargeResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=AddCustomerACHDebit": {
+            "post": {
+                "tags": [
+                    "Customer Vault"
+                ],
+                "summary": "",
+                "description": "AddCustomerACHDebit",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddCustomerACHDebitRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddCustomerACHDebitResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=AddPaymentPlan": {
+            "post": {
+                "tags": [
+                    "Subscriptions"
+                ],
+                "summary": "",
+                "description": "AddPaymentPlan",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddPaymentPlanRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AddPaymentPlanResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=UpdatePaymentPlan": {
+            "post": {
+                "tags": [
+                    "Subscriptions"
+                ],
+                "summary": "",
+                "description": "UpdatePaymentPlan",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdatePaymentPlanRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdatePaymentPlanResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        },
+        "/api/transaction.php?transactionType=CancelPaymentPlan": {
+            "post": {
+                "tags": [
+                    "Subscriptions"
+                ],
+                "summary": "",
+                "description": "CancelPaymentPlan",
+                "requestBody": {
+                    "description": "Transaction details",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CancelPaymentPlanRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CancelPaymentPlanResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request. Check your request parameters"
+                    },
+                    "401": {
+                        "description": "Unauthorized. Invalid credentials"
+                    },
+                    "500": {
+                        "description": "Internal server error. Please try again later"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ACHChargeRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "CheckType",
+                    "TransactionAmount",
+                    "BankRoutingnumber",
+                    "BankAccountnumber",
+                    "BankAccountType",
+                    "CheckType",
+                    "BillingNameFirst",
+                    "BillingNameLast",
+                    "BillingAddress",
+                    "BillingCity",
+                    "BillingState",
+                    "BillingZipCode",
+                    "Email"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "ACHCharge"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    },
+                    "BankRoutingnumber": {
+                        "type": "number"
+                    },
+                    "BankAccountnumber": {
+                        "type": "number"
+                    },
+                    "BankAccountType": {
+                        "type": "number"
+                    },
+                    "Description": {
+                        "type": "string"
+                    },
+                    "CheckType": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingFullName": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "Phonenumber": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string"
+                    },
+                    "Referencenumber": {
+                        "type": "number"
+                    },
+                    "Policynumber": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ACHChargeResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "StatusID": {
+                        "type": "string"
+                    },
+                    "TransactionType": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "BankRoutingnumber": {
+                        "type": "string"
+                    },
+                    "BankAccountnumber": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "Code": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ACHVOIDRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionID"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "ACHVOID"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "ACHVOIDResponse": {
+                "properties": {
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "Status": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ACHRefundRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionID",
+                    "TransactionAmount"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "ACHRefund"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "ACHRefundResponse": {
+                "properties": {
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "StatusID": {
+                        "type": "number"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ACHCreditRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionAmount",
+                    "BankRoutingnumber",
+                    "BankAccountnumber",
+                    "BankAccountType",
+                    "CheckType",
+                    "BillingNameFirst",
+                    "BillingNameLast",
+                    "BillingAddress",
+                    "BillingCity",
+                    "BillingState",
+                    "BillingZipCode",
+                    "Email"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "ACHCredit"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    },
+                    "BankRoutingnumber": {
+                        "type": "number"
+                    },
+                    "BankAccountnumber": {
+                        "type": "number"
+                    },
+                    "BankAccountType": {
+                        "type": "string"
+                    },
+                    "CheckType": {
+                        "type": "string"
+                    },
+                    "Description": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingFullName": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string"
+                    },
+                    "Policynumber": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ACHCreditResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "StatusID": {
+                        "type": "string"
+                    },
+                    "TransactionType": {
+                        "type": "string"
+                    },
+                    "PaymentType": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "BankRoutingnumber": {
+                        "type": "string"
+                    },
+                    "BankAccountnumber": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "Code": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetTransactionACHRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "GetTransactionACH"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetTransactionACHResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    },
+                    "Referencenumber": {
+                        "type": "string"
+                    },
+                    "AuthorizationCode": {
+                        "type": "string"
+                    },
+                    "ResponseCode": {
+                        "type": "string"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseCode": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseMessage": {
+                        "type": "string"
+                    },
+                    "AVSResponseCode": {
+                        "type": "string"
+                    },
+                    "AVSResponseMessage": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "BillingPhone": {
+                        "type": "string"
+                    },
+                    "CustomerID": {
+                        "type": "string"
+                    },
+                    "TransactionType": {
+                        "type": "string"
+                    },
+                    "VoidDate": {
+                        "type": "string"
+                    },
+                    "RefundDate": {
+                        "type": "string"
+                    },
+                    "Message": {
+                        "type": "string"
+                    },
+                    "Code": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetNOCListRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionType"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "GetNOCListRequest"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "StartDate": {
+                        "type": "string"
+                    },
+                    "EndDate": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetNOCListResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "StartDate": {
+                        "type": "string"
+                    },
+                    "EndDate": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "ReportDate": {
+                        "type": "string"
+                    },
+                    "TransDate": {
+                        "type": "string"
+                    },
+                    "AccountName": {
+                        "type": "string"
+                    },
+                    "TransAmount": {
+                        "type": "string"
+                    },
+                    "TransRoute": {
+                        "type": "string"
+                    },
+                    "AccountNo": {
+                        "type": "string"
+                    },
+                    "AccountType": {
+                        "type": "string"
+                    },
+                    "TransType": {
+                        "type": "string"
+                    },
+                    "TransID": {
+                        "type": "string"
+                    },
+                    "MerchantID": {
+                        "type": "string"
+                    },
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "ReturnAmount": {
+                        "type": "string"
+                    },
+                    "ReasonCode": {
+                        "type": "string"
+                    },
+                    "ReasonDescription": {
+                        "type": "string"
+                    },
+                    "Type": {
+                        "type": "string"
+                    },
+                    "NewAccountNo": {
+                        "type": "string"
+                    },
+                    "NewTransRoute": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetACHReturnListRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionType"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "GetACHReturnListRequest"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "StartDate": {
+                        "type": "string"
+                    },
+                    "EndDate": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetACHReturnListResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "StartDate": {
+                        "type": "string"
+                    },
+                    "EndDate": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "ReportDate": {
+                        "type": "string"
+                    },
+                    "TransDate": {
+                        "type": "string"
+                    },
+                    "AccountName": {
+                        "type": "string"
+                    },
+                    "TransAmount": {
+                        "type": "string"
+                    },
+                    "TransRoute": {
+                        "type": "string"
+                    },
+                    "AccountNo": {
+                        "type": "string"
+                    },
+                    "AccountType": {
+                        "type": "string"
+                    },
+                    "TransType": {
+                        "type": "string"
+                    },
+                    "TransID": {
+                        "type": "string"
+                    },
+                    "MerchantID": {
+                        "type": "string"
+                    },
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "ReturnAmount": {
+                        "type": "string"
+                    },
+                    "ReasonCode": {
+                        "type": "string"
+                    },
+                    "ReasonDescription": {
+                        "type": "string"
+                    },
+                    "Type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardAuthorizationRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionAmount",
+                    "Cardnumber",
+                    "ExpirationDateMMYY",
+                    "CVV2",
+                    "TransactionAmount",
+                    "BillingNameFirst",
+                    "BillingNameLast",
+                    "BillingFullName",
+                    "BillingAddress",
+                    "BillingCity",
+                    "BillingState",
+                    "BillingZipCode",
+                    "Email",
+                    "Referencenumber"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "CreditCardAuthorization"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "Cardnumber": {
+                        "type": "number"
+                    },
+                    "ExpirationDateMMYY": {
+                        "type": "number"
+                    },
+                    "CVV2": {
+                        "type": "number"
+                    },
+                    "Description": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingFullName": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "Phonenumber": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string"
+                    },
+                    "Referencenumber": {
+                        "type": "number"
+                    },
+                    "Policynumber": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardAuthorizationResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "string"
+                    },
+                    "Referencenumber": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    },
+                    "AuthorizationCode": {
+                        "type": "string"
+                    },
+                    "ResponseCode": {
+                        "type": "string"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseCode": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseMessage": {
+                        "type": "string"
+                    },
+                    "AVSResponseCode": {
+                        "type": "string"
+                    },
+                    "AVSResponseMessage": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "Code": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardRefundRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionID",
+                    "TransactionAmount"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "CreditCardRefun"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardRefundResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    },
+                    "AuthorizationCode": {
+                        "type": "string"
+                    },
+                    "ResponseCode": {
+                        "type": "string"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseCode": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseMessage": {
+                        "type": "string"
+                    },
+                    "AVSResponseCode": {
+                        "type": "string"
+                    },
+                    "AVSResponseMessage": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardSaleRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionAmount",
+                    "Cardnumber",
+                    "ExpirationDateMMYY",
+                    "CVV2",
+                    "TransactionAmount",
+                    "BillingNameFirst",
+                    "BillingNameLast",
+                    "BillingAddress",
+                    "BillingCity",
+                    "BillingState",
+                    "BillingZipCode",
+                    "Email"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "CreditCardSale"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "Cardnumber": {
+                        "type": "number"
+                    },
+                    "ExpirationDateMMYY": {
+                        "type": "number"
+                    },
+                    "CVV2": {
+                        "type": "number"
+                    },
+                    "Description": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "Phonenumber": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string"
+                    },
+                    "Policynumber": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardSaleResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    },
+                    "AuthorizationCode": {
+                        "type": "string"
+                    },
+                    "ResponseCode": {
+                        "type": "string"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseCode": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseMessage": {
+                        "type": "string"
+                    },
+                    "AVSResponseCode": {
+                        "type": "string"
+                    },
+                    "AVSResponseMessage": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirstCard Holder First Name": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "Code": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardSettleRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionID",
+                    "Referencenumber",
+                    "TransactionAmount"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "CreditCardSettle"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    },
+                    "Referencenumber": {
+                        "type": "number"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardSettleResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "string"
+                    },
+                    "Referencenumber": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    },
+                    "AuthorizationCode": {
+                        "type": "string"
+                    },
+                    "ResponseCode": {
+                        "type": "string"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseCode": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseMessage": {
+                        "type": "string"
+                    },
+                    "AVSResponseCode": {
+                        "type": "string"
+                    },
+                    "AVSResponseMessage": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardVoidRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionID"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "CreditCardVoid"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "CreditCardVoidResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    },
+                    "AuthorizationCode": {
+                        "type": "string"
+                    },
+                    "ResponseCode": {
+                        "type": "string"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseCode": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseMessage": {
+                        "type": "string"
+                    },
+                    "AVSResponseCode": {
+                        "type": "string"
+                    },
+                    "AVSResponseMessage": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetTransactionRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionID"
+                ],
+                "properties": {
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "GetTransaction"
+                        ]
+                    },
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "GetTransactionResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    },
+                    "AuthorizationCode": {
+                        "type": "string"
+                    },
+                    "ResponseCode": {
+                        "type": "string"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseCode": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseMessage": {
+                        "type": "string"
+                    },
+                    "AVSResponseCode": {
+                        "type": "string"
+                    },
+                    "AVSResponseMessage": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "BillingPhone": {
+                        "type": "string"
+                    },
+                    "CustomerID": {
+                        "type": "string"
+                    },
+                    "TransactionType": {
+                        "type": "string"
+                    },
+                    "VoidDate": {
+                        "type": "string"
+                    },
+                    "RefundDate": {
+                        "type": "string"
+                    },
+                    "Message": {
+                        "type": "string"
+                    },
+                    "Code": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AddCustomerRequest": {
+                "required": [
+                    "TransactionType",
+                    "CustomerID",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "BillingNameFirst",
+                    "BillingNameLast",
+                    "BillingAddress",
+                    "BillingCity",
+                    "BillingState",
+                    "BillingZipCode"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "AddCustomer"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "Cardnumber": {
+                        "type": "number"
+                    },
+                    "ExpirationDateMMYY": {
+                        "type": "number"
+                    },
+                    "BankRoutingnumber": {
+                        "type": "number"
+                    },
+                    "BankAccountnumber": {
+                        "type": "number"
+                    },
+                    "BankAccountType": {
+                        "type": "number"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingFullName": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AddCustomerResponse": {
+                "properties": {
+                    "CustomerID": {
+                        "type": "string"
+                    },
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "Status": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateCustomerRequest": {
+                "required": [
+                    "TransactionType",
+                    "CustomerID",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "BillingNameFirst",
+                    "BillingNameLast",
+                    "BillingAddress",
+                    "BillingCity",
+                    "BillingState",
+                    "BillingZipCode"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "UpdateCustomer"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "Cardnumber": {
+                        "type": "number"
+                    },
+                    "ExpirationDateMMYY": {
+                        "type": "number"
+                    },
+                    "BankRoutingnumber": {
+                        "type": "number"
+                    },
+                    "BankAccountnumber": {
+                        "type": "number"
+                    },
+                    "BankAccountType": {
+                        "type": "number"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingFullName": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdateCustomerResponse": {
+                "properties": {
+                    "CustomerID": {
+                        "type": "string"
+                    },
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "Status": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetCustomerRequest": {
+                "required": [
+                    "TransactionType",
+                    "CustomerID",
+                    "ProducerID",
+                    "UserName",
+                    "Password"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "GetCustomer"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "GetCustomerResponse": {
+                "properties": {
+                    "CustomerID": {
+                        "type": "string"
+                    },
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "Status": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AddCustomerCCChargeRequest": {
+                "required": [
+                    "TransactionType",
+                    "CustomerID",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionAmount"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "AddCustomerCCCharge"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    },
+                    "CVV2": {
+                        "type": "number"
+                    },
+                    "Policynumber": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AddCustomerCCChargeResponse": {
+                "properties": {
+                    "CustomerID": {
+                        "type": "string"
+                    },
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    },
+                    "ResponseCode": {
+                        "type": "string"
+                    },
+                    "ResponseMessage": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseCode": {
+                        "type": "string"
+                    },
+                    "CVV2ResponseMessage": {
+                        "type": "string"
+                    },
+                    "AVSResponseCode": {
+                        "type": "string"
+                    },
+                    "AVSResponseMessage": {
+                        "type": "string"
+                    },
+                    "CustomerName": {
+                        "type": "string"
+                    },
+                    "BillingNameFirst": {
+                        "type": "string"
+                    },
+                    "BillingNameLast": {
+                        "type": "string"
+                    },
+                    "BillingAddress": {
+                        "type": "string"
+                    },
+                    "BillingCity": {
+                        "type": "string"
+                    },
+                    "BillingState": {
+                        "type": "string"
+                    },
+                    "BillingZipCode": {
+                        "type": "string"
+                    },
+                    "BillingEmail": {
+                        "type": "string"
+                    },
+                    "Code": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AddCustomerACHDebitRequest": {
+                "required": [
+                    "TransactionType",
+                    "CustomerID",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "TransactionAmount"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "AddCustomerACHDebit"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "number"
+                    },
+                    "Policynumber": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AddCustomerACHDebitResponse": {
+                "properties": {
+                    "CustomerID": {
+                        "type": "string"
+                    },
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "PostedDate": {
+                        "type": "string"
+                    },
+                    "TransactionID": {
+                        "type": "string"
+                    },
+                    "TransactionAmount": {
+                        "type": "string"
+                    },
+                    "Status": {
+                        "type": "string"
+                    },
+                    "Code": {
+                        "type": "string"
+                    },
+                    "Msg": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AddPaymentPlanRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "CustomerID",
+                    "BillingCycles",
+                    "ProductID",
+                    "Amount",
+                    "Type",
+                    "RecurNote",
+                    "StartDate",
+                    "Occurences",
+                    "EndDate"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "AddPaymentPlan"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "BillingCycles": {
+                        "type": "string"
+                    },
+                    "ProductID": {
+                        "type": "string"
+                    },
+                    "Amount": {
+                        "type": "number"
+                    },
+                    "Type": {
+                        "type": "string"
+                    },
+                    "RecurNote": {
+                        "type": "string"
+                    },
+                    "Interval": {
+                        "type": "number"
+                    },
+                    "StartDate": {
+                        "type": "string"
+                    },
+                    "Occurences": {
+                        "type": "number"
+                    },
+                    "EndDate": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "AddPaymentPlanResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "TransactionType": {
+                        "type": "string"
+                    },
+                    "RecurringPlanID": {
+                        "type": "string"
+                    },
+                    "CustomerID": {
+                        "type": "string"
+                    },
+                    "RecurNote": {
+                        "type": "string"
+                    },
+                    "Active": {
+                        "type": "string"
+                    },
+                    "Amount": {
+                        "type": "string"
+                    },
+                    "BillingCycles": {
+                        "type": "string"
+                    },
+                    "LastPaymentDate": {
+                        "type": "string"
+                    },
+                    "NextChargeDate": {
+                        "type": "string"
+                    },
+                    "CreationDate": {
+                        "type": "string"
+                    },
+                    "PaymentType": {
+                        "type": "string"
+                    },
+                    "Type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdatePaymentPlanRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "CustomerID",
+                    "BillingCycles",
+                    "ProductID",
+                    "Amount",
+                    "Type",
+                    "RecurNote",
+                    "StartDate",
+                    "Occurences",
+                    "EndDate"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "CustomerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "UpdatePaymentPlan"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "BillingCycles": {
+                        "type": "string"
+                    },
+                    "ProductID": {
+                        "type": "string"
+                    },
+                    "Amount": {
+                        "type": "number"
+                    },
+                    "Type": {
+                        "type": "string"
+                    },
+                    "RecurNote": {
+                        "type": "string"
+                    },
+                    "Interval": {
+                        "type": "number"
+                    },
+                    "StartDate": {
+                        "type": "string"
+                    },
+                    "Occurences": {
+                        "type": "number"
+                    },
+                    "EndDate": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "UpdatePaymentPlanResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "TransactionType": {
+                        "type": "string"
+                    },
+                    "RecurringPlanID": {
+                        "type": "string"
+                    },
+                    "CustomerID": {
+                        "type": "string"
+                    },
+                    "RecurNote": {
+                        "type": "string"
+                    },
+                    "Active": {
+                        "type": "string"
+                    },
+                    "Amount": {
+                        "type": "string"
+                    },
+                    "BillingCycles": {
+                        "type": "string"
+                    },
+                    "LastPaymentDate": {
+                        "type": "string"
+                    },
+                    "NextChargeDate": {
+                        "type": "string"
+                    },
+                    "CreationDate": {
+                        "type": "string"
+                    },
+                    "PaymentType": {
+                        "type": "string"
+                    },
+                    "Type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "CancelPaymentPlanRequest": {
+                "required": [
+                    "TransactionType",
+                    "ProducerID",
+                    "UserName",
+                    "Password",
+                    "RecurringPlanID"
+                ],
+                "properties": {
+                    "ProducerID": {
+                        "type": "number"
+                    },
+                    "TransactionType": {
+                        "type": "string",
+                        "enum": [
+                            "CancelPaymentPlan"
+                        ]
+                    },
+                    "UserName": {
+                        "type": "string"
+                    },
+                    "Password": {
+                        "type": "string"
+                    },
+                    "RecurringPlanID": {
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "CancelPaymentPlanResponse": {
+                "properties": {
+                    "ProducerID": {
+                        "type": "string"
+                    },
+                    "GatewayConnect": {
+                        "type": "string"
+                    },
+                    "RecurringPlanID": {
+                        "type": "string"
+                    },
+                    "Active": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
